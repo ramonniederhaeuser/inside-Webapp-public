@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de-de">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="img/png" href="./images/Icon100.png" />
+    <meta
+      name="viewport"
+      content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"
+    />
+    <meta name="theme-color" content="#0a1f44" />
+    <meta name="description" content="Msports Inside Application" />
+    <link rel="apple-touch-icon" href="./images/Icon100.png" />
+    <link rel="manifest" href="./manifest.json" />
+    <title>MsportS Inside App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("./serviceworker.js")
+            .then((reg) => console.log("success: ", reg.scope))
+            .catch((err) => console.log("Failure: ", err));
+        });
+      }
+    </script>
+  </body>
+</html>
